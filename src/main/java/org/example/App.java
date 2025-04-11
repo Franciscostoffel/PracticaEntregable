@@ -14,7 +14,6 @@ public class App {
         LogicaCuenta logica = LogicaCuenta.getInstancia();
         Random random = new Random();
 
-        // Crear 10 cuentas con IDs 0 a 9
         for (int i = 1; i < 10; i++) {
             Cuenta cuenta;
             if (i % 2 == 0) {
@@ -29,7 +28,6 @@ public class App {
             logica.agregarCuenta(cuenta);
         }
 
-        // Crear 10.000 operaciones concurrentes
         ExecutorService executor = Executors.newFixedThreadPool(10);
 
         for (int i = 0; i < 10000; i++) {
@@ -46,11 +44,9 @@ public class App {
             });
         }
 
-        // Esperar a que termine todo
         executor.shutdown();
         executor.awaitTermination(1, TimeUnit.MINUTES);
 
-        // Mostrar resultados
         System.out.println("==== ESTADO FINAL DE CUENTAS ====");
         for (Cuenta cuenta : logica.getCuentas()) {
             System.out.printf("Cuenta ID: %d | Tipo: %s | Saldo: $%.2f | Operaciones: %d%n",

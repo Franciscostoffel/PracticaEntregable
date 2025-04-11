@@ -25,14 +25,12 @@ public class LogicaCuenta {
     public synchronized void agregarCuenta(Cuenta cuenta) {
         cuentas.add(cuenta);
     }
-
-    private Cuenta obtenerCuenta(int cuentaId) {
+    private Cuenta obtenerCuenta(int id) {
         return cuentas.stream()
-                .filter(c -> c.getId() == cuentaId)
+                .filter(c -> c.getId() == id)
                 .findFirst()
                 .orElse(null);
     }
-
     public boolean agregarSaldo(int id, double monto) {
         Cuenta cuenta = obtenerCuenta(id);
         if (cuenta == null) {
@@ -56,11 +54,6 @@ public class LogicaCuenta {
         }
         return cuenta.getSaldo();
     }
-
-    public Cuenta getCuenta(int cuentaId) {
-        return cuentas.get(cuentaId);
-    }
-
     public List<Cuenta> getCuentas() {
         return cuentas;
     }

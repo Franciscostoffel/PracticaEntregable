@@ -1,7 +1,7 @@
-package org.example.Service;
+package org.EjercicioEntregable.Service;
 import java.util.ArrayList;
 import java.util.List;
-import org.example.Entity.Cuenta;
+import org.EjercicioEntregable.Entity.Cuenta;
 public class LogicaCuenta {
     private static volatile LogicaCuenta instancia;
     private final List<Cuenta> cuentas;

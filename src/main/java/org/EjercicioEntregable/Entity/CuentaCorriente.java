@@ -1,4 +1,4 @@
-package org.example.Entity;
+package org.EjercicioEntregable.Entity;
 
 public class CuentaCorriente extends Cuenta{
     double giroDescubierto;

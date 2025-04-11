@@ -1,8 +1,8 @@
-package org.example;
-import org.example.Entity.CajaDeAhorro;
-import org.example.Entity.Cuenta;
-import org.example.Entity.CuentaCorriente;
-import org.example.Service.LogicaCuenta;
+package org.EjercicioEntregable;
+import org.EjercicioEntregable.Entity.CajaDeAhorro;
+import org.EjercicioEntregable.Entity.Cuenta;
+import org.EjercicioEntregable.Entity.CuentaCorriente;
+import org.EjercicioEntregable.Service.LogicaCuenta;
 
 import java.util.Random;
 import java.util.concurrent.ExecutorService;

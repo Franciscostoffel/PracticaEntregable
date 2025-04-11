@@ -1,4 +1,4 @@
-package org.example.Entity;
+package org.EjercicioEntregable.Entity;
 
 public class CajaDeAhorro extends  Cuenta{
         @Override

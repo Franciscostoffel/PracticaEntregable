@@ -1,4 +1,4 @@
-package org.example.Entity;
+package org.EjercicioEntregable.Entity;
 
 public abstract class Cuenta implements IGestionSaldo{
     public int Id;

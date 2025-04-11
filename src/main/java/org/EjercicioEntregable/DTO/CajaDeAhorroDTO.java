@@ -1,4 +1,4 @@
-package org.example.DTO;
+package org.EjercicioEntregable.DTO;
 
 public class CajaDeAhorroDTO  {
     private double saldo;

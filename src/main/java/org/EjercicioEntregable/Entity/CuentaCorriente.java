@@ -2,13 +2,14 @@ package org.EjercicioEntregable.Entity;
 
 public class CuentaCorriente extends Cuenta{
     double giroDescubierto;
+
     public CuentaCorriente(double giroDescubierto) {
         this.giroDescubierto = giroDescubierto;
     }
     @Override
     public synchronized boolean quitarSaldo(double monto) {
-        if (monto > 0 && monto <= saldo ){
-            saldo+=monto;
+        if (monto > 0 && -(saldo - monto) >= giroDescubierto){
+            saldo -= monto;
             operaciones++;
             return true;
         }
@@ -16,8 +17,8 @@ public class CuentaCorriente extends Cuenta{
     }
     @Override
     public boolean agregarSaldo(double monto) {
-        if (monto > 0 && (saldo - monto) >= -giroDescubierto) {
-            saldo -= monto;
+        if (monto > 0) {
+            saldo += monto;
             operaciones++;
             return true;
         }

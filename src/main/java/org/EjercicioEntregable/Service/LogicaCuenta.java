@@ -46,7 +46,6 @@ public class LogicaCuenta {
         }
         return cuenta.quitarSaldo(monto);
     }
-
     public double consultarSaldo(int id) {
         Cuenta cuenta = obtenerCuenta(id);
         if (cuenta == null) {

@@ -38,20 +38,12 @@ public class LogicaCuenta {
         }
         return cuenta.agregarSaldo(monto);
     }
-
     public boolean quitarSaldo(int id, double monto) {
         Cuenta cuenta = obtenerCuenta(id);
         if (cuenta == null) {
             return false;
         }
         return cuenta.quitarSaldo(monto);
-    }
-    public double consultarSaldo(int id) {
-        Cuenta cuenta = obtenerCuenta(id);
-        if (cuenta == null) {
-            return 0;
-        }
-        return cuenta.getSaldo();
     }
     public List<Cuenta> getCuentas() {
         return cuentas;

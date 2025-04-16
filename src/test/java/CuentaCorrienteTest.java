@@ -42,11 +42,19 @@ public class CuentaCorrienteTest {
         assertEquals(1, cuenta.getOperaciones());
     }
     @Test
+    public void testQuitarSaldoGiroDescubiertoCorrecto() {
+        cuenta.agregarSaldo(1000);
+        boolean resultado = cuenta.quitarSaldo(1500);
+        assertTrue(resultado);
+        assertEquals(-500, cuenta.getSaldo());
+        assertEquals(2, cuenta.getOperaciones());
+    }
+    @Test
     public void testQuitarSaldoGiroDescubiertoIncorrecto() {
         cuenta.agregarSaldo(1000);
-        boolean resultado = cuenta.quitarSaldo(1001);
+        boolean resultado = cuenta.quitarSaldo(2500);
         assertFalse(resultado);
-        assertEquals(2000, cuenta.getSaldo());
+        assertEquals(1000, cuenta.getSaldo());
         assertEquals(1, cuenta.getOperaciones());
     }
 }

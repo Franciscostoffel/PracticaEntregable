@@ -8,7 +8,7 @@ public class CuentaCorriente extends Cuenta{
     }
     @Override
     public synchronized boolean quitarSaldo(double monto) {
-        if (monto > 0 && -(saldo - monto) >= giroDescubierto){
+        if (monto > 0 && (saldo - monto) >= -giroDescubierto){
             saldo -= monto;
             operaciones++;
             return true;
